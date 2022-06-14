@@ -1,19 +1,42 @@
-import React from "react";
+import { Box, Card, CardActionArea, CardMedia, Paper } from "@mui/material";
+import React, { useContext, useEffect } from "react";
+import { moviesContext } from "../../contexts/moviesContext";
 import MoviesCards from "../Cards/MoviesCards";
 
 import CarouselBox from "../CarouselBox/CarouselBox";
 
-// import MyApp from "../Carousel/Carousel";`
-
 const Movies = () => {
+  const { getMovies, movies } = useContext(moviesContext);
+  // console.log(movies);
+  useEffect(() => {
+    getMovies();
+  }, []);
+
   return (
-    <>
+    <Box
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        flexFlow: "wrap",
+      }}
+    >
       <CarouselBox />
-      <MoviesCards />
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <button style={{ width: "150px", height: "50px" }}>Add Film</button>
-      </div>
-    </>
+      <Box
+        margin={"16px"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          flexFlow: "wrap",
+        }}
+      >
+        {movies.map((item) => (
+          <MoviesCards key={item.id} item={item} />
+        ))}
+      </Box>
+      {/* <MoviesCards /> */}
+    </Box>
   );
 };
 
