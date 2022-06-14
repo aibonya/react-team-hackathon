@@ -1,0 +1,40 @@
+{
+  "movies": [
+    {
+      "title": "asdadas",
+      "image": "asdadas",
+      "year": "",
+      "country": "",
+      "genre": "",
+      "duration": "asdadas",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 1
+    },
+    {
+      "title": "",
+      "image": "",
+      "year": "",
+      "country": "",
+      "genre": "",
+      "duration": "",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 2
+    },
+    {
+      "title": "sasdfg",
+      "image": "dsfg",
+      "year": "fdsg",
+      "country": "sfdg",
+      "genre": "sdfg",
+      "duration": "sdfgd",
+      "actors": "sgfhf",
+      "description": "fsdgh",
+      "trailer": "dsfgh",
+      "id": 3
+    }
+  ]
+}

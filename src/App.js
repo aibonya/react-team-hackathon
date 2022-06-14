@@ -7,24 +7,27 @@ import Footer from "./Components/Footer/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "@mui/material";
+import MoviesContextProvider from "./contexts/moviesContext";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Container
-          maxWidth="lg"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            flexFlow: "wrap",
-          }}
-        >
-          <Header />
-          <Routing />
-          <Footer />
-        </Container>
-      </BrowserRouter>
+      <MoviesContextProvider>
+        <BrowserRouter>
+          <Container
+            maxWidth="lg"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              flexFlow: "wrap",
+            }}
+          >
+            <Header />
+            <Routing />
+            <Footer />
+          </Container>
+        </BrowserRouter>
+      </MoviesContextProvider>
     </>
   );
 };
