@@ -13,8 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
 import { useNavigate } from "react-router-dom";
-
-const pages = ["Home", "Movies", "List", "Series"];
+const pages = ["Home", "Movies", "Soon", "Series"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
@@ -51,11 +50,11 @@ const Header = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            className="Header-title"
+            // className="Header-title"
             variant="h6"
             noWrap
             component="a"
-            href="/home"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -101,7 +100,20 @@ const Header = () => {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography
-                    onClick={() => navigate(`/${page.toLowerCase()}`)}
+                    onClick={() => {
+                      if (page === "Home") {
+                        navigate("/");
+                      }
+                      if (page === "Movies") {
+                        navigate("/movies");
+                      }
+                      if (page === "Series") {
+                        navigate("/series");
+                      }
+                      if (page === "Soon") {
+                        navigate("/soon");
+                      }
+                    }}
                     textAlign="center"
                     color={"black"}
                   >
@@ -117,7 +129,7 @@ const Header = () => {
             variant="h5"
             noWrap
             component="a"
-            href="/home"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -142,7 +154,20 @@ const Header = () => {
               <Button
                 style={{ padding: "10px", marginRight: "40px" }}
                 key={page}
-                onClick={() => navigate(`/${page.toLowerCase()}`)}
+                onClick={() => {
+                  if (page === "Home") {
+                    navigate("/");
+                  }
+                  if (page === "Movies") {
+                    navigate("/movies");
+                  }
+                  if (page === "Series") {
+                    navigate("/series");
+                  }
+                  if (page === "Soon") {
+                    navigate("/soon");
+                  }
+                }}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
                 {page}

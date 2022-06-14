@@ -10,6 +10,9 @@ const Movies = () => {
     <>
       <CarouselBox />
       <Cards />
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <button style={{ width: "150px", height: "50px" }}>Add Film</button>
+      </div>
     </>
   );
 };
