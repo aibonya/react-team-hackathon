@@ -1,0 +1,66 @@
+{
+  "series": [
+    {
+      "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "year": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "country": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "genre": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "duration": "",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 1
+    },
+    {
+      "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "year": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "country": "",
+      "genre": "",
+      "duration": "",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 2
+    }
+  ],
+  "movies": [
+    {
+      "title": "asdadas",
+      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "year": "",
+      "country": "",
+      "genre": "",
+      "duration": "asdadas",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 1
+    },
+    {
+      "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "year": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "country": "",
+      "genre": "",
+      "duration": "",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 2
+    },
+    {
+      "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "year": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
+      "country": "",
+      "genre": "",
+      "duration": "",
+      "actors": "",
+      "description": "",
+      "trailer": "",
+      "id": 3
+    }
+  ]
+}
