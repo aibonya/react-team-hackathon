@@ -2,8 +2,8 @@ import { Box, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { moviesContext } from "../../contexts/moviesContext";
 
-const AddMovies = () => {
-  const { createMovie } = useContext(moviesContext);
+const AddSeries = () => {
+  const { createSeries } = useContext(moviesContext);
   //   console.log(createMovie);
 
   const [title, setTitle] = useState("");
@@ -17,7 +17,7 @@ const AddMovies = () => {
   const [trailer, setTrailer] = useState("");
 
   function handleValues() {
-    let newMovie = {
+    let newSeries = {
       title,
       image,
       year,
@@ -28,8 +28,8 @@ const AddMovies = () => {
       description,
       trailer,
     };
-    createMovie(newMovie);
-    console.log(newMovie);
+    createSeries(newSeries);
+    console.log(newSeries);
   }
 
   return (
@@ -112,4 +112,4 @@ const AddMovies = () => {
   );
 };
 
-export default AddMovies;
+export default AddSeries;

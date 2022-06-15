@@ -1,17 +1,40 @@
-import React from "react";
-
+import { Box } from "@mui/material";
+import React, { useContext, useEffect } from "react";
+import { moviesContext } from "../../contexts/moviesContext";
 import SeriesCards from "../Cards/SeriesCards";
 import SeriesCarousel from "../CarouselBox/SeriesCarousel";
 
 const Series = () => {
+  const { getSeries, series } = useContext(moviesContext);
+  // console.log(series);
+  useEffect(() => {
+    getSeries();
+  }, []);
+
   return (
-    <>
+    <Box
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        flexFlow: "wrap",
+      }}
+    >
       <SeriesCarousel />
-      <SeriesCards />
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <button style={{ width: "150px", height: "50px" }}>Add Series</button>
-      </div>
-    </>
+      <Box
+        margin={"16px"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          flexFlow: "wrap",
+        }}
+      >
+        {series.map((item) => (
+          <SeriesCards key={item.id} item={item} />
+        ))}
+      </Box>
+    </Box>
   );
 };
 

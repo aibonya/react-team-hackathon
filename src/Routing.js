@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AddMovies from "./Components/AddMovies/AddMovies";
+import AddSeries from "./Components/AddMovies/AddSeries";
 
 import HomePage from "./Components/HomePage/HomePage";
 import Movies from "./Components/Movies/Movies";
@@ -15,6 +16,7 @@ const Routing = () => {
       <Route path="/soon" element={<Soon />} />
       <Route path="/series" element={<Series />} />
       <Route path="/add-movies" element={<AddMovies />} />
+      <Route path="/add-series" element={<AddSeries />} />
     </Routes>
   );
 };

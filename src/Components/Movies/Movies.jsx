@@ -1,7 +1,8 @@
-import { Box, Card, CardActionArea, CardMedia, Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useContext, useEffect } from "react";
 import { moviesContext } from "../../contexts/moviesContext";
 import MoviesCards from "../Cards/MoviesCards";
+import SeriesCards from "../Cards/SeriesCards";
 
 import CarouselBox from "../CarouselBox/CarouselBox";
 
@@ -35,7 +36,6 @@ const Movies = () => {
           <MoviesCards key={item.id} item={item} />
         ))}
       </Box>
-      {/* <MoviesCards /> */}
     </Box>
   );
 };

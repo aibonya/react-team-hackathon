@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import { Box, CardActionArea, Paper } from "@mui/material";
 
 export default function MoviesCards({ item }) {
-  console.log(item);
+  // console.log(item);
   return (
     <>
       <Box margin={"16px"}>
@@ -20,7 +20,7 @@ export default function MoviesCards({ item }) {
                   component="img"
                   height="280"
                   image={item.image}
-                  alt="green bugatti"
+                  alt={item.title}
                 />
               </CardActionArea>
             </Card>
