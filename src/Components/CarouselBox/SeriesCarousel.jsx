@@ -2,10 +2,10 @@ import Carousel from "react-bootstrap/Carousel";
 
 function SeriesCarousel() {
   return (
-    <Carousel fade>
+    <Carousel fade  style={{marginTop: '60px', marginBottom: "50px"}}>
       <Carousel.Item>
         <img
-          style={{ borderRadius: "15px", marginBottom: "29px" }}
+          style={{ borderRadius: "50px", marginBottom: "29px" }}
           className="d-block w-100"
           src="https://images.hdqwalls.com/wallpapers/sub-zero-x-night-king-8b.jpg"
           alt="First slide"
@@ -20,7 +20,7 @@ function SeriesCarousel() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{ borderRadius: "15px", marginBottom: "29px" }}
+          style={{ borderRadius: "30px", marginBottom: "29px" }}
           className="d-block w-100"
           src="https://images.hdqwalls.com/wallpapers/the-simpsons-tv-show-4k-su.jpg"
           alt="Second slide"
@@ -33,7 +33,7 @@ function SeriesCarousel() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{ borderRadius: "15px", marginBottom: "29px" }}
+          style={{ borderRadius: "30px", marginBottom: "29px" }}
           className="d-block w-100"
           src="https://www.kino-teatr.ru/news/18644/167625.jpg"
           alt="Third slide"

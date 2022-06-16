@@ -17,7 +17,6 @@ const App = () => {
     <HeaderContextProvider>
       <MoviesContextProvider>
         <BrowserRouter>
-        <Header />
           <Container
             maxWidth="lg"
             style={{
@@ -27,8 +26,9 @@ const App = () => {
               flexFlow: "wrap",
             }}
           >
-            {/* <Header /> */}
+            <Header />
             <Routing />
+            {/* <Header /> */}
             <Sidebar />
             <BackDrop />
             <Footer />

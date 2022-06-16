@@ -41,6 +41,7 @@ function reducer(state = INIT_STATE, action) {
 const MoviesContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
+  // для отправки в db.json
   async function createMovie(newMovie) {
     await axios.post(API, newMovie);
   }
@@ -48,6 +49,7 @@ const MoviesContextProvider = ({ children }) => {
     await axios.post(API2, newSeries);
   }
 
+  // для получения
   async function getMovies() {
     let res = await axios(`${API}`);
     dispatch({
@@ -63,6 +65,23 @@ const MoviesContextProvider = ({ children }) => {
     });
   }
 
+  // для получения одного фильма - сериала
+  async function getOneMovie (id){
+    let res = await axios(`${API}/${id}`)
+    console.log(res);
+    dispatch({
+      type: 'GET_ONE_MOVIE',
+      payload: res.data,
+    });
+  }
+  async function getOneSeries (id){
+    let res = await axios(`${API2}/${id}`)
+    console.log(res);
+    dispatch({
+      type: 'GET_ONE_SERIES',
+      payload: res.data,
+    });
+  }
   return (
     <moviesContext.Provider
       value={{
@@ -70,6 +89,8 @@ const MoviesContextProvider = ({ children }) => {
         oneMovie: state.oneMovie,
         series: state.series,
         oneSeries: state.oneSeries,
+        getOneMovie,
+        getOneSeries,
         createMovie,
         createSeries,
         getMovies,

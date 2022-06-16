@@ -1,9 +1,11 @@
-import { Box, TextField } from "@mui/material";
+import { Alert, Box, Button, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { moviesContext } from "../../contexts/moviesContext";
 
 const AddMovies = () => {
   const { createMovie } = useContext(moviesContext);
+  const navigate = useNavigate()
   //   console.log(createMovie);
 
   const [title, setTitle] = useState("");
@@ -16,6 +18,7 @@ const AddMovies = () => {
   const [description, setDescription] = useState("");
   const [trailer, setTrailer] = useState("");
 
+  
   function handleValues() {
     let newMovie = {
       title,
@@ -26,8 +29,13 @@ const AddMovies = () => {
       duration,
       actors,
       description,
-      trailer,
+      trailer
     };
+    if(!title.trim() || !image.trim() || !year.trim() || !country.trim() || !genre.trim() || !duration.trim() || !actors.trim() || !description.trim() || !trailer.trim()){
+      alert('Fill to the filds')
+      return
+    }
+    navigate(`/movies`)
     createMovie(newMovie);
     console.log(newMovie);
   }
@@ -37,77 +45,80 @@ const AddMovies = () => {
       <Box
         sx={{
           display: "flex",
+          justifyContent: "space-around",
           alignItems: "center",
           flexWrap: "wrap",
           "& > :not(style)": { m: 1 },
         }}
       >
         <TextField
-          helperText="Please enter your name"
+          helperText="Add title"
           id="demo-helper-text-misaligned"
           label="Name"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add image"
           id="demo-helper-text-misaligned"
           label="Name"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add date"
           id="demo-helper-text-misaligned"
           label="Name"
           value={year}
           onChange={(e) => setYear(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add country"
           id="demo-helper-text-misaligned"
           label="Name"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add genre"
           id="demo-helper-text-misaligned"
           label="Name"
           value={genre}
           onChange={(e) => setGenre(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add duration"
           id="demo-helper-text-misaligned"
           label="Name"
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add actors"
           id="demo-helper-text-misaligned"
           label="Name"
           value={actors}
           onChange={(e) => setActors(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add description"
           id="demo-helper-text-misaligned"
           label="Name"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <TextField
-          helperText="Please enter your name"
+          helperText="Add trailer"
           id="demo-helper-text-misaligned"
           label="Name"
           value={trailer}
           onChange={(e) => setTrailer(e.target.value)}
         />
-
-        <button onClick={handleValues}>Save</button>
       </Box>
+      
+        <Box style={{display: 'flex', justifyContent: 'center'}} onClick={() => handleValues()}>
+        <button style={{width: '100px', height: '40px', borderRadius: '20px', border: 'none', backgroundColor: ''}} >Save</button>
+        </Box>
     </div>
   );
 };

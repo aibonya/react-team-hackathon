@@ -23,44 +23,32 @@
       "description": "",
       "trailer": "",
       "id": 2
+    },
+    {
+      "title": "Мир Юрского периода: Господство (12+) 3D",
+      "image": "https://m.media-amazon.com/images/I/71OIhbUOF-L.jpg",
+      "year": "2022",
+      "country": "USA",
+      "genre": "comedy",
+      "duration": "2h",
+      "actors": "Крис Пратт Брайс Даллас Ховард Лора Дерн Сэм Нил Джефф Голдблюм ДеВанда Уайз Мамуду Ати Изабелла Сермон Кэмпбелл Скотт Б.Д. Вонг 64 актера",
+      "description": "После уничтожения острова Нублар динозавры вырвались на свободу и заполнили планету. Людям удается поддерживать хрупкое равновесие, определяющее мирное сосуществование на Земле. Но как долго человек сможет сохранять свое господство, живя по соседству с самыми устрашающими существами в истории?",
+      "trailer": "//www.youtube.com/embed/jETbQ3mCqDo",
+      "id": 6
     }
   ],
   "movies": [
     {
-      "title": "asdadas",
-      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "year": "",
-      "country": "",
-      "genre": "",
-      "duration": "asdadas",
-      "actors": "",
-      "description": "",
-      "trailer": "",
-      "id": 1
-    },
-    {
-      "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "year": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "country": "",
-      "genre": "",
-      "duration": "",
-      "actors": "",
-      "description": "",
-      "trailer": "",
-      "id": 2
-    },
-    {
-      "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "year": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
-      "country": "",
-      "genre": "",
-      "duration": "",
-      "actors": "",
-      "description": "",
-      "trailer": "",
-      "id": 3
+      "title": "Мир Юрского периода: Господство (12+) 3D",
+      "image": "https://m.media-amazon.com/images/I/71OIhbUOF-L.jpg",
+      "year": "2022",
+      "country": "USA",
+      "genre": "comedy",
+      "duration": "2h",
+      "actors": "Крис Пратт Брайс Даллас Ховард Лора Дерн Сэм Нил Джефф Голдблюм ДеВанда Уайз Мамуду Ати Изабелла Сермон Кэмпбелл Скотт Б.Д. Вонг 64 актера",
+      "description": "После уничтожения острова Нублар динозавры вырвались на свободу и заполнили планету. Людям удается поддерживать хрупкое равновесие, определяющее мирное сосуществование на Земле. Но как долго человек сможет сохранять свое господство, живя по соседству с самыми устрашающими существами в истории?",
+      "trailer": "//www.youtube.com/embed/jETbQ3mCqDo",
+      "id": 6
     }
   ]
 }

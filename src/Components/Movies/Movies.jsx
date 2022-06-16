@@ -22,7 +22,7 @@ const Movies = () => {
         flexFlow: "wrap",
       }}
     >
-      <CarouselBox />
+      <CarouselBox/>
       <Box
         margin={"16px"}
         style={{

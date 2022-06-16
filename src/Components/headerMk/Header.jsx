@@ -12,8 +12,9 @@ import {
 import InputBase from "@mui/material/InputBase";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import navmenu from "./images/navmenu.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import Avatar from "@mui/material/Avatar";
 import "./Header.css";
 
 
@@ -63,8 +64,8 @@ export default function Header() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const navigate = useNavigate()
 
+
   const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -79,12 +80,10 @@ export default function Header() {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
 
   function handleClick(){
     navigate('/add-movies');
+    handleMenuClose()
   }
 
   const menuId = "primary-search-account-menu";
@@ -106,7 +105,8 @@ export default function Header() {
     >
       <MenuItem onClick={handleMenuClose}>Profile </MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem ><AddPhotoAlternateIcon onClick={handleClick}/></MenuItem>
+      <MenuItem onClick={handleClick} ><AddPhotoAlternateIcon/> Add movies</MenuItem>
+      <MenuItem onClick={() => navigate(`/add-series`)} >Add series</MenuItem>
       <MenuItem>
         <Badge badgeContent={17} color="error">Notification</Badge>
       </MenuItem>
@@ -115,7 +115,7 @@ export default function Header() {
 
 
   return (
-    <Box className="tool-bar">
+    <Box className="tool-bar" width={'100%'}>
       <Box
         style={{
           width: "100%",
@@ -149,22 +149,22 @@ export default function Header() {
           style={{ width: "1000px", display: "flex", justifyContent: "center" }}
         >
           <Box className="header-box">
-            <Typography className="header-text text" fontWeight={400}>
+            <Typography onClick={() => navigate(`/`)} className="header-text text" fontWeight={400}>
               HOME
             </Typography>
           </Box>
           <Box className="header-box">
-            <Typography className="header-text text" fontWeight={400}>
+            <Typography onClick={() => navigate(`/movies`)} className="header-text text" fontWeight={400}>
               MOVIES
             </Typography>
           </Box>
           <Box className="header-box">
-            <Typography className="header-text text" fontWeight={400}>
+            <Typography onClick={() => navigate(`/series`)} className="header-text text" fontWeight={400}>
               SERIES
             </Typography>
           </Box>
           <Box className="header-box">
-            <Typography className="header-text text" fontWeight={400}>
+            <Typography onClick={() => navigate(`/soon`)} className="header-text text" fontWeight={400}>
               SOON
             </Typography>
           </Box>
@@ -179,7 +179,7 @@ export default function Header() {
             onClick={handleProfileMenuOpen}
             color="inherit"
           >
-            <AccountCircle className='acc-icon' sx={{ fontSize: 45 }} />
+            <Avatar src="https://cdn-icons-png.flaticon.com/512/147/147144.png" sx={{ fontSize: 45 }} />
           </IconButton>
         </Box>
 
