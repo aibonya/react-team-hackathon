@@ -20,6 +20,7 @@ body {
   align-items: end;
   padding: 1rem;
   z-index: 56;
+  cursor: pointer;
 }
 
 
@@ -128,7 +129,7 @@ body {
     font-size: 15px !important;
   }
   .acc-icon{
-    font-size: 25px !important;
+
   }
   .burger{
     margin-right: 30px;

@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function SeriesCards({ item }) {
   const navigate = useNavigate()
-  console.log(item);
   return (
     <>
       <Box margin={"16px"} onClick={() => navigate(`/series/${item.id}`)}>

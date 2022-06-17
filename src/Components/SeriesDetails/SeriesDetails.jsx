@@ -1,13 +1,16 @@
 import { Box, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
+import { authContext } from '../../contexts/authContext';
 import { moviesContext } from '../../contexts/moviesContext';
 import Loader from "../Loader/Loader";
-import './Details.css';
+import './SeriesDetails.css';
 
 const SeriesDetails = () => {
-    const {getOneSeries, oneSeries} = useContext(moviesContext)
-    console.log(oneSeries);
+    const {getOneSeries, oneSeries, deleteSeries} = useContext(moviesContext)
+    const navigate = useNavigate()
+    const {admin} = useContext(authContext)
     const { id } = useParams()
     useEffect(() => {
         getOneSeries(id)
@@ -16,10 +19,11 @@ const SeriesDetails = () => {
     // <div className="contentBlock">
     <div className='innerContentBlock'>
        {oneSeries ? ( 
-            <div className='move_info'>
-                <h2 className='title_text'>{oneSeries.title}</h2>
+           <div className='movie_info'>
+                <h2 className='title_text '>{oneSeries.title}</h2>
+                {admin ? (<Box  style={{marginTop: '20px'}}><Button style={{marginRight: '20px'}} onClick={() => {deleteSeries(id); navigate(`/series`)}} variant="outline-dark">Delete</Button> <Button onClick={() => navigate(`/edit-series/${id}`)} variant="outline-dark">Edit</Button></Box>) : null}
                 <div className="movie_block">
-                    <div className="movie_preview">
+                    <div className="movie_preview" style={{marginTop: '20px'}}>
                         <img style={{width: '253x', height: '343px'}} src={oneSeries.image} alt={oneSeries.title} />
                         <br />
                         &nbsp;
@@ -48,13 +52,13 @@ const SeriesDetails = () => {
                     </div>
                     <div className='clear'></div>
                    
-                    <div className='row_info' style={{paddingLeft:'0px'}}>
+                    <div className='row_info' style={{paddingLeft:'0px' ,width: '100%'}}>
                         <div style={{fontWeight: 'bold', paddingBottom: '3px', borderBottom: '1px dashed #c0c0c0', marginBottom: '7px'}}>
                             <div className='row_label'>Description</div>
                         </div>
                         <div style={{lineHeight: '18px'}}>
                             <p  style={{ marginBottom: '50px'}}>{oneSeries.description}</p>
-                            <p><iframe width="560" height="315" src={oneSeries.trailer}></iframe></p>
+                            <p><iframe width="560" height="315" src={oneSeries.trailer} ></iframe></p>
                         </div>
                     </div>
                 </div>

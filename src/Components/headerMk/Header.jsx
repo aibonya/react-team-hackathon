@@ -4,6 +4,7 @@ import { styled, alpha } from "@mui/material/styles";
 import {
   Badge,
   Box,
+  Button,
   IconButton,
   Menu,
   MenuItem,
@@ -16,6 +17,8 @@ import { useNavigate} from "react-router-dom";
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import Avatar from "@mui/material/Avatar";
 import "./Header.css";
+import { authContext } from "../../contexts/authContext";
+import LoginIcon from '@mui/icons-material/Login';
 
 
 const Search = styled("div")(({ theme }) => ({
@@ -60,8 +63,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Header() {
   const { toggleSidebar } = useContext(headerContext);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const {user, logOut, admin} = useContext(authContext)
+  // console.log(user)
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const navigate = useNavigate()
 
 
@@ -103,10 +108,16 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile </MenuItem>
+      {user ? (<MenuItem onClick={handleMenuClose}>{user.email}</MenuItem>) : (<MenuItem onClick={() =>{handleMenuClose();  navigate(`/log-in`)}}>Login</MenuItem>)}
+      {user ? (         
+      <MenuItem onClick={() => {handleMenuClose(); logOut()}}>Log out</MenuItem>) : null}
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleClick} ><AddPhotoAlternateIcon/> Add movies</MenuItem>
-      <MenuItem onClick={() => navigate(`/add-series`)} >Add series</MenuItem>
+      {admin ? (
+        <>
+        <MenuItem onClick={handleClick} ><AddPhotoAlternateIcon/> Add movies</MenuItem>
+        <MenuItem onClick={() => navigate(`/add-series`)} >Add series</MenuItem></>
+      ) : null}
+      
       <MenuItem>
         <Badge badgeContent={17} color="error">Notification</Badge>
       </MenuItem>
@@ -170,7 +181,8 @@ export default function Header() {
           </Box>
         </Box>
         <Box style={{ display: "flex" }}>
-          <IconButton
+
+            {user ? (<IconButton
             size="large"
             edge="end"
             aria-label="account of current user"
@@ -178,13 +190,15 @@ export default function Header() {
             aria-haspopup="true"
             onClick={handleProfileMenuOpen}
             color="inherit"
-          >
-            <Avatar src="https://cdn-icons-png.flaticon.com/512/147/147144.png" sx={{ fontSize: 45 }} />
-          </IconButton>
+            className="acc-icon">
+            <Avatar  src="https://cdn-icons-png.flaticon.com/512/147/147144.png" sx={{ fontSize: 45 }} />
+          </IconButton>) : (<Button onClick={() => navigate(`/log-in`)}><LoginIcon /></Button>)}
+            {/* {!user ? (<Button onClick={() => navigate(`/log-in`)}  fontWeight={400}>Login</Button>) : null} */}
         </Box>
 
         {renderMenu}
       </Box>
+      {/* {console.log(user)} */}
     </Box>
   );
 }

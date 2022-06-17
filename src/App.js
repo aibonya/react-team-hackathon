@@ -10,10 +10,12 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import HeaderContextProvider from "./contexts/headerContext";
 import Sidebar from "./Components/headerMk/Sidebar";
 import BackDrop from "./Components/headerMk/BackDrop";
+import AuthContextProvider from "./contexts/authContext";
 
 const App = () => {
   return (
     <>
+    <AuthContextProvider>
     <HeaderContextProvider>
       <MoviesContextProvider>
         <BrowserRouter>
@@ -36,6 +38,7 @@ const App = () => {
         </BrowserRouter>
       </MoviesContextProvider>
       </HeaderContextProvider>
+      </AuthContextProvider>
     </>
   );
 };

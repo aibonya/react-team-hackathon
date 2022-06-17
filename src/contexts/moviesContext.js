@@ -68,7 +68,7 @@ const MoviesContextProvider = ({ children }) => {
   // для получения одного фильма - сериала
   async function getOneMovie (id){
     let res = await axios(`${API}/${id}`)
-    console.log(res);
+    // console.log(res);
     dispatch({
       type: 'GET_ONE_MOVIE',
       payload: res.data,
@@ -76,12 +76,31 @@ const MoviesContextProvider = ({ children }) => {
   }
   async function getOneSeries (id){
     let res = await axios(`${API2}/${id}`)
-    console.log(res);
+    // console.log(res);
     dispatch({
       type: 'GET_ONE_SERIES',
       payload: res.data,
     });
   }
+
+  //  для удаления
+  async function deleteMovie (id){
+    await axios.delete(`${API}/${id}`)
+    getMovies()
+  }
+  async function deleteSeries (id){
+    await axios.delete(`${API2}/${id}`)
+    getSeries()
+  }
+
+  // для редактирования
+  async function updateMovie (id, editedMovie){
+    await axios.patch(`${API}/${id}`, editedMovie);
+  }
+  async function updateSeries (id, editedSeries){
+    await axios.patch(`${API2}/${id}`, editedSeries);
+  }
+
   return (
     <moviesContext.Provider
       value={{
@@ -89,6 +108,10 @@ const MoviesContextProvider = ({ children }) => {
         oneMovie: state.oneMovie,
         series: state.series,
         oneSeries: state.oneSeries,
+        updateMovie,
+        updateSeries,
+        deleteSeries,
+        deleteMovie,
         getOneMovie,
         getOneSeries,
         createMovie,

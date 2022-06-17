@@ -13,10 +13,10 @@
 .title_text {
     color: #00b4ef !important;
     font-size: 20px !important;
-    margin-bottom: 20px !important;
 }
 .movie_block {
     position: relative;
+    width: 100%;
 }
 .movie_preview {
     float: left;
@@ -29,7 +29,7 @@
 }
 .movie_decription {
     float: left;
-    width: 620px;
+    width: 75% !important;
     display: table;
 }
 .row_info {
@@ -51,5 +51,30 @@
 }
 .row_info .row_value {
     width: 400px;
+}
+@media all and (max-width: 849px){
+    .movie_preview img{
+        height: 250px !important;
+    }
+}
+@media all and (max-width: 680px){
+    iframe{
+        width: 320px !important;
+        height: 150px !important;
+    }
+}
+@media all and (max-width: 555px){
+    .movie_preview img{
+        height: 170px !important;
+    }
+}
+@media all and (max-width: 420px){
+    .movie_preview{
+        width: 110px !important;
+    }
+    iframe{
+        width: 220px !important;
+        height: 120px !important;
+    }
 }
 
