@@ -17,7 +17,7 @@ const Details = () => {
      }, [])
     return (
     // <div className="contentBlock">
-    <div className='innerContentBlock'>
+    <div className='innerContentBlock' style={{marginTop: '100px'}}>
        {oneMovie ? ( 
            <div className='movie_info'>
                 <h2 className='title_text '>{oneMovie.title}</h2>
@@ -46,6 +46,10 @@ const Details = () => {
                             <div className='row_value'>{oneMovie.duration}</div>
                         </div>
                         <div  className="row_info">
+                            <div className='row_label'>Price</div>
+                            <div className='row_value'>{oneMovie.price}</div>
+                        </div>
+                        <div  className="row_info">
                             <div className='row_label'>Starring</div>
                             <div className='row_value'>{oneMovie.actors}</div>
                         </div>
@@ -61,6 +65,7 @@ const Details = () => {
                             <p><iframe width="560" height="315" src={oneMovie.trailer} ></iframe></p>
                         </div>
                     </div>
+                    
                 </div>
         </div>
        ) : (<Loader />)} 

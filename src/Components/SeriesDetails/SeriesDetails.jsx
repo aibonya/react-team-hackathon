@@ -17,7 +17,7 @@ const SeriesDetails = () => {
      }, [])
     return (
     // <div className="contentBlock">
-    <div className='innerContentBlock'>
+    <div className='innerContentBlock' style={{marginTop: '100px'}}>
        {oneSeries ? ( 
            <div className='movie_info'>
                 <h2 className='title_text '>{oneSeries.title}</h2>
@@ -44,6 +44,10 @@ const SeriesDetails = () => {
                         <div  className="row_info">
                             <div className='row_label'>Duration</div>
                             <div className='row_value'>{oneSeries.duration}</div>
+                        </div>
+                        <div  className="row_info">
+                            <div className='row_label'>Price</div>
+                            <div className='row_value'>{oneSeries.price}</div>
                         </div>
                         <div  className="row_info">
                             <div className='row_label'>Starring</div>

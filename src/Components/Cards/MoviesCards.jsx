@@ -13,10 +13,10 @@ export default function MoviesCards({ item }) {
     <>
       <Box margin={"16px"} onClick={() => navigate(`/movies/${item.id}`)}>
         <Paper
-          style={{ borderRadius: "30px" }}
+        style={{ borderRadius: "30px" }}
           elevation={12}
           children={
-            <Card style={{ borderRadius: "30px" }} sx={{ maxWidth: 200 }}>
+            <Card style={{ borderRadius: "30px" , backgroundColor: "none !important" }} sx={{ maxWidth: 200 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"

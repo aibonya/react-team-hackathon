@@ -20,6 +20,7 @@ const Movies = () => {
         justifyContent: "center",
         flexDirection: "column",
         flexFlow: "wrap",
+        marginTop: '90px'
       }}
     >
       <CarouselBox/>

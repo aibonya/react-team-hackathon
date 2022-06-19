@@ -19,6 +19,7 @@ const App = () => {
     <HeaderContextProvider>
       <MoviesContextProvider>
         <BrowserRouter>
+        <Header />
           <Container
             maxWidth="lg"
             style={{
@@ -26,14 +27,16 @@ const App = () => {
               justifyContent: "center",
               flexDirection: "column",
               flexFlow: "wrap",
+              backgroundColor: "white",
             }}
-          >
-            <Header />
+          >  
             <Routing />
-            {/* <Header /> */}
             <Sidebar />
             <BackDrop />
-            <Footer />
+          </Container>
+          <Container maxWidth="lg"
+          style={{padding: '0px'}}>
+          <Footer />
           </Container>
         </BrowserRouter>
       </MoviesContextProvider>

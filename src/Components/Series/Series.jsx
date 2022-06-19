@@ -18,9 +18,10 @@ const Series = () => {
         justifyContent: "center",
         flexDirection: "column",
         flexFlow: "wrap",
+        marginTop: '90px'
       }}
     >
-      <SeriesCarousel />
+      {/* <SeriesCarousel /> */}
       <Box
         margin={"16px"}
         style={{

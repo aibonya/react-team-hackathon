@@ -6,15 +6,16 @@
 } */
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: white;
+  background-color:  #f4f4f4 !important;
 }
 .tool-bar {
-  background-color: white;
+  background-color: #1f1f1f;
+  position: fixed;
   /* background: none; */
   /* border: 2px solid black; */
   /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); */
   /* height: 135px; */
-  color: black;
+  color: rgba(255,255,255,.6);
   display: flex;
   gap: 1rem;
   align-items: end;
@@ -32,8 +33,13 @@ body {
 .header-text{
   /* font-size: 24px !important; */
 }
+
+.tengizTyp{
+  color: white;
+}
 .text:hover{
   font-weight: 700;
+  color: white;
 }
 .header-box{
   width: 15%;
@@ -46,7 +52,7 @@ body {
 
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   background-color: white;
   /* background: none; */
   color: black;
@@ -96,15 +102,22 @@ body {
   display: block;
 }
 
-@media all and (max-width: 5000px){
-  .burger{
-    display: none;
+
+@media all and (max-width: 1225px){
+  .tool-bar-child{
+    width: 850px !important;
   }
 }
 @media all and (max-width: 950px){
   .burger{
     display: block;
     width: 40px !important;
+  }
+  .burger-box{
+    margin-right: 0px !important;
+  }
+  .tool-bar-child{
+    width: 90% !important;
   }
   .tengizText{
     width: 20000%;
@@ -123,13 +136,14 @@ body {
 }
 @media all and (max-width: 450px){
   .burger{
-    width: 20px !important;
+    width: 30px !important;
   }
   .tengizTyp{
     font-size: 15px !important;
   }
   .acc-icon{
-
+    width: 33px !important;
+    height: 33px !important;
   }
   .burger{
     margin-right: 30px;

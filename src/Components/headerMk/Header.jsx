@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import navmenu from "./images/navmenu.png";
 import { useNavigate} from "react-router-dom";
@@ -113,33 +114,35 @@ export default function Header() {
       <MenuItem onClick={() => {handleMenuClose(); logOut()}}>Log out</MenuItem>) : null}
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       {admin ? (
-        <>
+        <div>
         <MenuItem onClick={handleClick} ><AddPhotoAlternateIcon/> Add movies</MenuItem>
-        <MenuItem onClick={() => navigate(`/add-series`)} >Add series</MenuItem></>
+        <MenuItem onClick={() => {handleMenuClose(); navigate(`/add-series`)}} >Add series</MenuItem></div>
       ) : null}
       
       <MenuItem>
-        <Badge badgeContent={17} color="error">Notification</Badge>
+        <Badge onClick={handleMenuClose} badgeContent={17} color="error">Notification</Badge>
       </MenuItem>
     </Menu>
   );
 
 
   return (
-    <Box className="tool-bar" width={'100%'}>
+    <Box className="tool-bar" width={'100%'} style={{display: 'flex', justifyContent: "center"}}>
       <Box
+        className="tool-bar-child"
         style={{
-          width: "100%",
+          width: "1000px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
         }}
       >
-        <Box
+        <Box 
+          className="burger-box"
           onClick={() => toggleSidebar()}
-          style={{ height: "48px", display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", marginRight: '40px' }}
         >
-          <img className="burger" src={navmenu} alt="" />
+          <MenuRoundedIcon className='burger' style={{fontSize: '45px'}}/>
         </Box>
         <Box className="tengizText">
           <Typography
@@ -180,8 +183,7 @@ export default function Header() {
             </Typography>
           </Box>
         </Box>
-        <Box style={{ display: "flex" }}>
-
+        <Box>
             {user ? (<IconButton
             size="large"
             edge="end"
@@ -189,11 +191,9 @@ export default function Header() {
             aria-controls={menuId}
             aria-haspopup="true"
             onClick={handleProfileMenuOpen}
-            color="inherit"
-            className="acc-icon">
-            <Avatar  src="https://cdn-icons-png.flaticon.com/512/147/147144.png" sx={{ fontSize: 45 }} />
-          </IconButton>) : (<Button onClick={() => navigate(`/log-in`)}><LoginIcon /></Button>)}
-            {/* {!user ? (<Button onClick={() => navigate(`/log-in`)}  fontWeight={400}>Login</Button>) : null} */}
+            color="inherit">
+            <Avatar className="acc-icon" src="https://cdn-icons-png.flaticon.com/512/147/147144.png"  />
+          </IconButton>) : (<Button onClick={() => navigate(`/log-in`)}><LoginIcon style={{color: 'white'}}/></Button>)}
         </Box>
 
         {renderMenu}

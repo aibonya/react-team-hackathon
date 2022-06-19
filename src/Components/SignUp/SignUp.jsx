@@ -47,7 +47,7 @@ const SignUp = (e) => {
                                 <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Your password" />
                             </Form.Group>
 
-                            <Form.Group>
+                            <Form.Group className="mt-3">
                                 <div style={{display:'flex', justifyContent: "start"}}>Confirm the password</div>
                                 <Form.Control value={passCheck} onChange={(e) => setPassCheck(e.target.value)} type="password"  placeholder="Confirm" />
                             </Form.Group>
