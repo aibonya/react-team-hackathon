@@ -1,15 +1,20 @@
 import { Box, Typography } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { authContext } from '../../contexts/authContext';
+import { cartContext } from '../../contexts/cartContext';
 import { moviesContext } from '../../contexts/moviesContext';
+import BookmarkAddRoundedIcon from '@mui/icons-material/BookmarkAddRounded';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import Loader from "../Loader/Loader";
 import './SeriesDetails.css';
 
 const SeriesDetails = () => {
     const {getOneSeries, oneSeries, deleteSeries} = useContext(moviesContext)
     const navigate = useNavigate()
+    const { addProductToCart, checkProductInCart } = useContext(cartContext);
+    const [checkProduct, setCheckProduct] = useState(checkProductInCart(oneSeries));
     const {admin} = useContext(authContext)
     const { id } = useParams()
     useEffect(() => {
@@ -24,6 +29,9 @@ const SeriesDetails = () => {
                 {admin ? (<Box  style={{marginTop: '20px'}}><Button style={{marginRight: '20px'}} onClick={() => {deleteSeries(id); navigate(`/series`)}} variant="outline-dark">Delete</Button> <Button onClick={() => navigate(`/edit-series/${id}`)} variant="outline-dark">Edit</Button></Box>) : null}
                 <div className="movie_block">
                     <div className="movie_preview" style={{marginTop: '20px'}}>
+                    <Button style={{marginBottom: '20px'}} variant="outline-dark" onClick={() => {addProductToCart(oneSeries);setCheckProduct(checkProductInCart(oneSeries));}}>
+                    {checkProduct ? <BookmarkAddedIcon /> : <BookmarkAddRoundedIcon />}
+                </Button>
                         <img style={{width: '253x', height: '343px'}} src={oneSeries.image} alt={oneSeries.title} />
                         <br />
                         &nbsp;

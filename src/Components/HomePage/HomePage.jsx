@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import CarouselFadeExample from "../CarouselBox/CarouselBox";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomePage = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div style={{ textAlign: "center" , marginTop: '120px'} }>
-      <h1>Тут будет HomePage</h1>
+      <h1>Doctor Strange in the Multiverse of Madness</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-        aspernatur, animi iste in deserunt atque voluptas voluptatibus similique
-        harum, sequi quis.
+      Marvel Studios debuts the teaser trailer and poster for “Doctor Strange in the Multiverse of Madness”—a thrilling ride through the Multiverse with Doctor Strange, his trusted friend Wong and Wanda Maximoff, aka Scarlet Witch.
       </p>
       <div style={{width: '100%'}}>
         <video
@@ -23,11 +28,21 @@ const HomePage = () => {
         quibusdam pariatur maxime saepe porro recusandae repudiandae voluptas
         corrupti nisi, veritatis, accusantium modi ab officia iusto.
       </p>
+      <div data-aos="flip-left">
+      <CarouselFadeExample />
+      </div>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
         repudiandae incidunt laborum rem, sit at repellendus fuga numquam vel
         unde ipsum id excepturi veritatis accusamus
       </p>
+      <div style={{marginTop: '100px',display: 'flex',alignItems: 'center',justifyContent: 'space-between', width:'100%'}}>
+        <img data-aos="flip-right" style={{borderRadius: '25px', width: '25%'}} src="https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/ce63a1b8-e60a-400a-ad10-c375cb0fe7a7/1920x" alt="" />
+        <img data-aos="flip-left" style={{borderRadius: '25px', width: '25%'}} src="https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/ce63a1b8-e60a-400a-ad10-c375cb0fe7a7/1920x" alt="" />
+      </div>
+      <div style={{display: 'flex', alignItems: 'center', flexDirection: 'row-reverse', justifyContent: 'center', width:'100%'}}>
+        <img data-aos="fade-down" style={{borderRadius: '25px', width: '25%'}} src="https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/ce63a1b8-e60a-400a-ad10-c375cb0fe7a7/1920x" alt="" />
+      </div>
     </div>
   );
 };

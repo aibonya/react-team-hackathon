@@ -20,47 +20,8 @@ import Avatar from "@mui/material/Avatar";
 import "./Header.css";
 import { authContext } from "../../contexts/authContext";
 import LoginIcon from '@mui/icons-material/Login';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
 
 export default function Header() {
   const { toggleSidebar } = useContext(headerContext);
@@ -118,10 +79,6 @@ export default function Header() {
         <MenuItem onClick={handleClick} ><AddPhotoAlternateIcon/> Add movies</MenuItem>
         <MenuItem onClick={() => {handleMenuClose(); navigate(`/add-series`)}} >Add series</MenuItem></div>
       ) : null}
-      
-      <MenuItem>
-        <Badge onClick={handleMenuClose} badgeContent={17} color="error">Notification</Badge>
-      </MenuItem>
     </Menu>
   );
 
@@ -183,7 +140,8 @@ export default function Header() {
             </Typography>
           </Box>
         </Box>
-        <Box>
+        <Box style={{display: 'flex', alignItems: 'center'}}>
+            <BookmarkIcon className='bookmark' onClick={() => navigate(`/cart`)} style={{ fontSize: '30px' }}/>
             {user ? (<IconButton
             size="large"
             edge="end"
@@ -193,7 +151,7 @@ export default function Header() {
             onClick={handleProfileMenuOpen}
             color="inherit">
             <Avatar className="acc-icon" src="https://cdn-icons-png.flaticon.com/512/147/147144.png"  />
-          </IconButton>) : (<Button onClick={() => navigate(`/log-in`)}><LoginIcon style={{color: 'white'}}/></Button>)}
+          </IconButton>) : (<Button onClick={() => navigate(`/log-in`)}><LoginIcon size="1rem" style={{color: 'white'}}/></Button>)}
         </Box>
 
         {renderMenu}

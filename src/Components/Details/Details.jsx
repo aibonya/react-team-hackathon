@@ -1,14 +1,19 @@
 import { Box, Typography } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { authContext } from '../../contexts/authContext';
+import { cartContext } from '../../contexts/cartContext';
 import { moviesContext } from '../../contexts/moviesContext';
+import BookmarkAddRoundedIcon from '@mui/icons-material/BookmarkAddRounded';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import Loader from "../Loader/Loader";
 import './Details.css';
 
 const Details = () => {
     const {getOneMovie, oneMovie, deleteMovie} = useContext(moviesContext)
+    const { addProductToCart, checkProductInCart } = useContext(cartContext);
+    const [checkProduct, setCheckProduct] = useState(checkProductInCart(oneMovie));
     const navigate = useNavigate()
     const {admin} = useContext(authContext)
     const { id } = useParams()
@@ -24,6 +29,9 @@ const Details = () => {
                 {admin ? (<Box  style={{marginTop: '20px'}}><Button style={{marginRight: '20px'}} onClick={() => {deleteMovie(id); navigate(`/movies`)}} variant="outline-dark">Delete</Button> <Button onClick={() => navigate(`/edit-movies/${id}`)} variant="outline-dark">Edit</Button></Box>) : null}
                 <div className="movie_block"  style={{marginTop: '20px'}}>
                     <div className="movie_preview">
+                <Button style={{marginBottom: '20px'}} variant="outline-dark" onClick={() => {addProductToCart(oneMovie);setCheckProduct(checkProductInCart(oneMovie));}}>
+                    {checkProduct ? <BookmarkAddedIcon /> : <BookmarkAddRoundedIcon />}
+                </Button>
                         <img style={{width: '253x', height: '343px'}} src={oneMovie.image} alt={oneMovie.title} />
                         <br />
                         &nbsp;

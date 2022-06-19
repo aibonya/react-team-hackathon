@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { moviesContext } from "../../contexts/moviesContext";
 import MoviesCards from "../Cards/MoviesCards";
 import SeriesCards from "../Cards/SeriesCards";
+import CarouselFadeExample from "../CarouselBox/CarouselBox";
 
 import CarouselBox from "../CarouselBox/CarouselBox";
 import Filters from "../Filters/Filters";
@@ -58,6 +59,7 @@ const Movies = () => {
           <MoviesCards key={item.id} item={item} />
         ))}
       </Box>
+        <CarouselFadeExample />
       <Box display={"flex"} justifyContent={"center"}>
         <Pagination
           page={page}

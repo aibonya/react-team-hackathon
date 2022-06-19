@@ -11,6 +11,7 @@ import HeaderContextProvider from "./contexts/headerContext";
 import Sidebar from "./Components/headerMk/Sidebar";
 import BackDrop from "./Components/headerMk/BackDrop";
 import AuthContextProvider from "./contexts/authContext";
+import CartContextProvider from "./contexts/cartContext";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
     <AuthContextProvider>
     <HeaderContextProvider>
       <MoviesContextProvider>
+        <CartContextProvider>
         <BrowserRouter>
         <Header />
           <Container
@@ -39,6 +41,7 @@ const App = () => {
           <Footer />
           </Container>
         </BrowserRouter>
+        </CartContextProvider>
       </MoviesContextProvider>
       </HeaderContextProvider>
       </AuthContextProvider>

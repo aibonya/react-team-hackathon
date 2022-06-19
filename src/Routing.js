@@ -2,12 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AddMovies from "./Components/AddMovies/AddMovies";
 import AddSeries from "./Components/AddMovies/AddSeries";
+import Cart from "./Components/Cart/Cart";
 import Details from "./Components/Details/Details";
 import EditMovies from "./Components/Edit/EditMovies";
 import EditSeries from "./Components/Edit/EditSeries";
 import HomePage from "./Components/HomePage/HomePage";
 import LoginForm from "./Components/LoginForm/LoginForm";
 import Movies from "./Components/Movies/Movies";
+import PayForm from "./Components/PayForm/PayForm";
 import Series from "./Components/Series/Series";
 import SeriesDetails from "./Components/SeriesDetails/SeriesDetails";
 import SignUp from "./Components/SignUp/SignUp";
@@ -28,6 +30,9 @@ const Routing = () => {
       <Route path="/add-series" element={<AddSeries />} />
       <Route path="/edit-movies/:id" element={<EditMovies />} />
       <Route path="/edit-series/:id" element={<EditSeries />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/pay-form" element={<PayForm />} />
+
     </Routes>
   );
 };

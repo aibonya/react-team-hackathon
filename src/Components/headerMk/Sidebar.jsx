@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import { headerContext } from "../../contexts/headerContext";
 import { useNavigate } from "react-router-dom";
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const Sidebar = () => {
   const { sidebar, toggleSidebar} = useContext(headerContext);
@@ -15,7 +16,9 @@ const Sidebar = () => {
         <li onClick={() =>{toggleSidebar(); navigate(`/`)}}><HomeRoundedIcon />HOME</li>
         <li onClick={() =>{toggleSidebar(); navigate(`/movies`)}}><LocalMoviesIcon />MOVIES</li>
         <li onClick={() =>{toggleSidebar(); navigate(`/series`)}}><LiveTvIcon />SERIES</li>
-        <li onClick={() =>{toggleSidebar(); navigate(`/soon`)}}><AccessTimeIcon />SOON</li>
+        <li onClick={() =>{toggleSidebar(); navigate(`/cart`)}}><ShoppingCartRoundedIcon />CART</li>
+        <li onClick={() =>{toggleSidebar(); navigate(`/cart`)}}><BookmarkIcon />YOUR FAVORITE</li>
+
       </div>
     </div>
   );
