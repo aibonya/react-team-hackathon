@@ -9,6 +9,8 @@ const INIT_STATE = {
   series: [],
   oneMovie: null,
   oneSeries: null,
+  moviesPages: 0,
+  seriesPages: 0
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -17,6 +19,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         movies: action.payload.data,
+        moviesPages: Math.ceil(action.payload.headers["x-total-count"] / 3)
       };
     case "GET_ONE_MOVIE":
       return {
@@ -27,6 +30,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         series: action.payload.data,
+        seriesPages: Math.ceil(action.payload.headers["x-total-count"] / 3)
       };
     case "GET_ONE_SERIES":
       return {
@@ -51,14 +55,14 @@ const MoviesContextProvider = ({ children }) => {
 
   // для получения
   async function getMovies() {
-    let res = await axios(`${API}`);
+    let res = await axios(`${API}${window.location.search}`);
     dispatch({
       type: "GET_MOVIES",
       payload: res,
     });
   }
   async function getSeries() {
-    let res = await axios(`${API2}`);
+    let res = await axios(`${API2}${window.location.search}`);
     dispatch({
       type: "GET_SERIES",
       payload: res,
@@ -108,6 +112,8 @@ const MoviesContextProvider = ({ children }) => {
         oneMovie: state.oneMovie,
         series: state.series,
         oneSeries: state.oneSeries,
+        moviesPages: state.moviesPages,
+        seriesPages: state.seriesPages,
         updateMovie,
         updateSeries,
         deleteSeries,

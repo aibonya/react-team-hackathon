@@ -47,7 +47,7 @@ const Details = () => {
                         </div>
                         <div  className="row_info">
                             <div className='row_label'>Price</div>
-                            <div className='row_value'>{oneMovie.price}</div>
+                            <div className='row_value'>{oneMovie.price}$</div>
                         </div>
                         <div  className="row_info">
                             <div className='row_label'>Starring</div>

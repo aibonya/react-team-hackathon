@@ -23,7 +23,7 @@ const LoginForm = () => {
     return (
         <>
             <Container>
-                <Row  className="mt-5" style={{display: "flex", justifyContent: 'center' ,alignItems: 'center'}}>
+                <Row style={{display: "flex", justifyContent: 'center' ,alignItems: 'center', marginTop: '6rem'}}>
                     <Col lg={4} md={5} sm={12} className="text-center mt-5 p-3">
                         <Form>
                             <Form.Group controlId="formBasicEmail">
