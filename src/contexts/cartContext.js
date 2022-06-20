@@ -59,6 +59,7 @@ function addProductToCart (product){
       products: [],
       totalPrice: 0
     }
+    localStorage.setItem("cart", JSON.stringify(cart))
   }
   console.log(cart);
   let isProductInCart = cart.products.some((item) => item.item.id === product.id)

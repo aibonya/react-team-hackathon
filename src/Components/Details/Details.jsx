@@ -13,13 +13,18 @@ import './Details.css';
 const Details = () => {
     const {getOneMovie, oneMovie, deleteMovie} = useContext(moviesContext)
     const { addProductToCart, checkProductInCart } = useContext(cartContext);
-    const [checkProduct, setCheckProduct] = useState(checkProductInCart(oneMovie));
+    const { id } = useParams()
+    const [checkProduct, setCheckProduct] = useState(false);
     const navigate = useNavigate()
     const {admin} = useContext(authContext)
-    const { id } = useParams()
     useEffect(() => {
         getOneMovie(id)
      }, [])
+     useEffect(()=> {
+        if(oneMovie){
+            setCheckProduct(checkProductInCart(oneMovie))
+        }
+     }, [oneMovie])
     return (
     // <div className="contentBlock">
     <div className='innerContentBlock' style={{marginTop: '100px'}}>
