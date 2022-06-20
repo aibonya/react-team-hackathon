@@ -1,5 +1,5 @@
 {
-  "series": [
+  "movies": [
     {
       "title": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
       "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",
@@ -25,7 +25,7 @@
       "id": 2
     }
   ],
-  "movies": [
+  "series": [
     {
       "title": "asdadas",
       "image": "https://s4.vcdn.biz/static/f/2875493551/image.jpg/pt/r300x423x4.jpg",

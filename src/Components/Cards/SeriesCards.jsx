@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import { Box, CardActionArea, Paper } from "@mui/material";
 
 export default function SeriesCards({ item }) {
-  console.log(item);
+  // console.log(item);
   return (
     <>
       <Box margin={"16px"}>

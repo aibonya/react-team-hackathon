@@ -12,11 +12,11 @@ const HomePage = () => {
       <div
         style={{ backgroundColor: "coral", width: "100%", height: "400px" }}
       ></div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
-        quibusdam pariatur maxime saepe porro recusandae repudiandae voluptas
-        corrupti nisi, veritatis, accusantium modi ab officia iusto.
-      </p>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/jETbQ3mCqDo?start=8"
+      ></iframe>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
         repudiandae incidunt laborum rem, sit at repellendus fuga numquam vel

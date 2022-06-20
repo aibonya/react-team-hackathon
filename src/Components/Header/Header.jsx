@@ -179,8 +179,8 @@ const Header = () => {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
-                  alt="Remy Sharp"
-                  src="https://images.clipartlogo.com/files/istock/previews/9487/94877745-flat-cartoon-man-vector-icon-man-icon-illustration.jpg"
+                  alt="adsfghhgf"
+                  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3c9f4a40760693.578c9a4699778.gif"
                 />
               </IconButton>
             </Tooltip>
