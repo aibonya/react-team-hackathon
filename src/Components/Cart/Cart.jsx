@@ -30,12 +30,13 @@ const rows = [
 
 export default function Cart() {
   const {getCart, cart, changeProductCount, deleteFromCart} = useContext(cartContext)
+  // console.log(cart,getCart);
   useEffect(() => {
     getCart()
     
   },[])
   const navigate = useNavigate()
-  console.log(cart);
+  // console.log(cart);
   return (
     <Container style={{marginTop: '150px'}}>
     <TableContainer component={Paper}>

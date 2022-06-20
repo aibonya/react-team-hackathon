@@ -99,7 +99,7 @@ const AddSeries = () => {
                     </Form.Group>
 
                     <Form.Group className="mt-3">
-                        <div style={{display:'flex', justifyContent: "start"}}>Confirm the password</div>
+                        <div style={{display:'flex', justifyContent: "start"}}>Price</div>
                         <Form.Control value={price} onChange={(e) => setPrice(+e.target.value)} type="number"  placeholder="Enter price" />
                     </Form.Group>
 

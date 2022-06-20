@@ -13,7 +13,6 @@ import {
 import InputBase from "@mui/material/InputBase";
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import navmenu from "./images/navmenu.png";
 import { useNavigate} from "react-router-dom";
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import Avatar from "@mui/material/Avatar";
@@ -76,7 +75,7 @@ export default function Header() {
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       {admin ? (
         <div>
-        <MenuItem onClick={handleClick} ><AddPhotoAlternateIcon/> Add movies</MenuItem>
+        <MenuItem onClick={handleClick} >Add movies</MenuItem>
         <MenuItem onClick={() => {handleMenuClose(); navigate(`/add-series`)}} >Add series</MenuItem></div>
       ) : null}
     </Menu>
@@ -132,11 +131,6 @@ export default function Header() {
           <Box className="header-box">
             <Typography onClick={() => navigate(`/series`)} className="header-text text" fontWeight={400}>
               SERIES
-            </Typography>
-          </Box>
-          <Box className="header-box">
-            <Typography onClick={() => navigate(`/soon`)} className="header-text text" fontWeight={400}>
-              SOON
             </Typography>
           </Box>
         </Box>

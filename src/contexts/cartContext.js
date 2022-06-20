@@ -60,7 +60,7 @@ function addProductToCart (product){
       totalPrice: 0
     }
   }
-  console.log(product);
+  console.log(cart);
   let isProductInCart = cart.products.some((item) => item.item.id === product.id)
   return isProductInCart
  }
