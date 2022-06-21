@@ -2,15 +2,17 @@ import axios from "axios";
 import React, { createContext, useReducer } from "react";
 
 export const moviesContext = createContext();
-const API = "http://localhost:8001/movies";
-const API2 = "http://localhost:8001/series";
+// const API = "http://localhost:8001/movies";
+const API = "https://online-cinema-hackathon.herokuapp.com/data1";
+// const API2 = "http://localhost:8001/series";
+const API2 = "https://online-cinema-hackathon.herokuapp.com/data2";
 const INIT_STATE = {
   movies: [],
   series: [],
   oneMovie: null,
   oneSeries: null,
   moviesPages: 0,
-  seriesPages: 0
+  seriesPages: 0,
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -19,7 +21,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         movies: action.payload.data,
-        moviesPages: Math.ceil(action.payload.headers["x-total-count"] / 3)
+        moviesPages: Math.ceil(action.payload.headers["x-total-count"] / 3),
       };
     case "GET_ONE_MOVIE":
       return {
@@ -30,7 +32,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         series: action.payload.data,
-        seriesPages: Math.ceil(action.payload.headers["x-total-count"] / 3)
+        seriesPages: Math.ceil(action.payload.headers["x-total-count"] / 3),
       };
     case "GET_ONE_SERIES":
       return {
@@ -70,38 +72,38 @@ const MoviesContextProvider = ({ children }) => {
   }
 
   // для получения одного фильма - сериала
-  async function getOneMovie (id){
-    let res = await axios(`${API}/${id}`)
+  async function getOneMovie(id) {
+    let res = await axios(`${API}/${id}`);
     // console.log(res);
     dispatch({
-      type: 'GET_ONE_MOVIE',
+      type: "GET_ONE_MOVIE",
       payload: res.data,
     });
   }
-  async function getOneSeries (id){
-    let res = await axios(`${API2}/${id}`)
+  async function getOneSeries(id) {
+    let res = await axios(`${API2}/${id}`);
     // console.log(res);
     dispatch({
-      type: 'GET_ONE_SERIES',
+      type: "GET_ONE_SERIES",
       payload: res.data,
     });
   }
 
   //  для удаления
-  async function deleteMovie (id){
-    await axios.delete(`${API}/${id}`)
-    getMovies()
+  async function deleteMovie(id) {
+    await axios.delete(`${API}/${id}`);
+    getMovies();
   }
-  async function deleteSeries (id){
-    await axios.delete(`${API2}/${id}`)
-    getSeries()
+  async function deleteSeries(id) {
+    await axios.delete(`${API2}/${id}`);
+    getSeries();
   }
 
   // для редактирования
-  async function updateMovie (id, editedMovie){
+  async function updateMovie(id, editedMovie) {
     await axios.patch(`${API}/${id}`, editedMovie);
   }
-  async function updateSeries (id, editedSeries){
+  async function updateSeries(id, editedSeries) {
     await axios.patch(`${API2}/${id}`, editedSeries);
   }
 

@@ -1,5 +1,5 @@
 {
-  "series": [
+  "data1": [
     {
       "title": "Дикая (16+)",
       "image": "http://www.manascinema.com/upload/movies/movie_2333/thumb.jpg",
@@ -131,7 +131,7 @@
       "id": 22
     }
   ],
-  "movies": [
+  "data2": [
     {
       "title": "Дикая (16+)",
       "image": "http://www.manascinema.com/upload/movies/movie_2333/thumb.jpg",
