@@ -124,12 +124,12 @@ export default function Header() {
             </Typography>
           </Box>
           <Box className="header-box">
-            <Typography onClick={() => navigate(`/movies`)} className="header-text text" fontWeight={400}>
+            <Typography onClick={() => navigate(`/movies${window.location.search}`)} className="header-text text" fontWeight={400}>
               MOVIES
             </Typography>
           </Box>
           <Box className="header-box">
-            <Typography onClick={() => navigate(`/series`)} className="header-text text" fontWeight={400}>
+            <Typography onClick={() => navigate(`/series${window.location.search}`)} className="header-text text" fontWeight={400}>
               SERIES
             </Typography>
           </Box>
